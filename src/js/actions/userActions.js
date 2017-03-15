@@ -8,7 +8,7 @@ export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 
 export const getUsers = () => {
     return dispatch => {
-        return axios.get('http://fewd.pl/api/users')
+        return axios.get('https://klawiaturka.pl/api/users')
         .then(response => {
             dispatch({
                 type: GET_USERS_SUCCESS,
@@ -27,7 +27,7 @@ export const getUsers = () => {
 
 export const createUser = (userName) => {
     return dispatch => {
-        return axios.post('http://fewd.pl/api/users', {
+        return axios.post('https://klawiaturka.pl/api/users', {
             id: Date.now(),
             name: userName
         })
@@ -53,7 +53,7 @@ export const createUser = (userName) => {
 
 export const updateUser = (userId, userName) => {
     return dispatch => {
-        return axios.patch(`http://fewd.pl/api/users/${userId}`, {
+        return axios.patch(`https://klawiaturka.pl/api/users/${userId}`, {
             name: userName
         })
         .then(response => {
@@ -81,7 +81,7 @@ export const deleteUser = (userId) => {
         return {type: false};
     }
     return dispatch => {
-        return axios.delete(`http://fewd.pl/api/users/${userId}`)
+        return axios.delete(`https://klawiaturka.pl/api/users/${userId}`)
         .then(response => {
             dispatch({
                 type: DELETE_USER_SUCCESS,
